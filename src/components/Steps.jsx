@@ -136,7 +136,7 @@ const steps = [
     options: [
       {
         value: 1,
-        label: "As Next Question is based on vedio, click here to watch vedio",
+        label: "As Next Question is based on video, click here to watch video",
         trigger: "videoplayer",
       },
     ],
@@ -153,7 +153,7 @@ const steps = [
       {
         value: 1,
         label:
-          "Answer the question carefully based on above vedio, click here!",
+          "Answer the question carefully based on above video, click here!",
         trigger: "select_image",
       },
     ],
