@@ -221,7 +221,7 @@ const steps = [
 
   {
     id: "end",
-    message: "Thank You for Watching The DEMO",
+    message: "Thank You For Watching The DEMO",
     end: true,
   },
 ];
