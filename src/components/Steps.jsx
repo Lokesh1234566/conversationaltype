@@ -11,7 +11,8 @@ import CourseSelectionComponent from "./CourseSelectionComponent";
 const steps = [
   {
     id: "1",
-    message: "Hello! Welcome To Chat Conversation",
+    message:
+      "Hello! This is a sample conversational from with HTML UI Elements",
     trigger: "name",
   },
   {
@@ -26,7 +27,7 @@ const steps = [
   },
   {
     id: "userdateofbirth",
-    message: "Select Your DateOfBirth ",
+    message: "Select Your Date Of Birth using date picker ",
     trigger: "dateofbirth",
   },
   {
@@ -37,7 +38,7 @@ const steps = [
   },
   {
     id: "storeDateOfBirth",
-    message: "Date of Birth Save",
+    message: "Date picker demo done",
     trigger: "user-email",
     delay: 1000,
     metadata: {
@@ -47,7 +48,7 @@ const steps = [
   },
   {
     id: "user-email",
-    message: "What's your email address?",
+    message: "Demo for Email valiation",
     trigger: "email",
   },
   {
@@ -64,7 +65,7 @@ const steps = [
   },
   {
     id: "userGender",
-    message: "What is your gender?",
+    message: "Select Your Gender (Push button validation)",
     trigger: "gender",
   },
   {
@@ -76,7 +77,7 @@ const steps = [
   },
   {
     id: "phone_number",
-    message: "Enter your phone number:",
+    message: "Enter your phone number (Number validation)",
     trigger: "phoneNumber",
   },
   {
@@ -110,7 +111,7 @@ const steps = [
   },
   {
     id: "upload_photo",
-    message: "upload the photo",
+    message: "upload the photo (size should be less then 2MB)",
     trigger: "photo_file",
   },
   {
@@ -121,32 +122,35 @@ const steps = [
   {
     id: "photo",
     user: true,
-    trigger: "select_image",
+    trigger: "audio",
   },
   {
-    id: "select_image",
-    message: "Please select one image",
-    trigger: "5",
+    id: "audio",
+    message: "Do You Want to play audio",
+    trigger: "audioOption",
   },
   {
-    id: "5",
+    id: "audioOption",
     options: [
       {
         value: 1,
-        label: <CustomImage src={q_1_1} />,
-        component: <CustomImage src={q_1_1} selectedOption={1} />,
-        trigger: "video",
+        label: "yes",
+        trigger: "audioplayer",
       },
+      { value: 2, label: "no", trigger: "nextoptions" },
+    ],
+  },
+  {
+    id: "audioplayer",
+    component: <AudioStep />,
+    trigger: "nextoptions",
+  },
+  {
+    id: "nextoptions",
+    options: [
       {
-        value: 2,
-        label: <CustomImage src={q_1_2} />,
-        component: <CustomImage src={q_1_2} selectedOption={2} />,
-        trigger: "video",
-      },
-      {
-        value: 3,
-        label: <CustomImage src={q_1_3} />,
-        component: <CustomImage src={q_1_3} selectedOption={3} />,
+        value: 1,
+        label: "For Next Question click here!",
         trigger: "video",
       },
     ],
@@ -178,61 +182,40 @@ const steps = [
       {
         value: 1,
         label: "For Next Question click here!",
-        trigger: "audio",
+        trigger: "select_image",
       },
     ],
   },
+
   {
-    id: "audio",
-    message: "Do You Want to play audio",
-    trigger: "audioOption",
+    id: "select_image",
+    message: "Please select body frame based on image",
+    trigger: "5",
   },
   {
-    id: "audioOption",
+    id: "5",
     options: [
       {
         value: 1,
-        label: "yes",
-        trigger: "audioplayer",
+        label: <CustomImage src={q_1_1} />,
+        component: <CustomImage src={q_1_1} selectedOption={1} />,
+        trigger: "userstate",
       },
-      { value: 2, label: "no", trigger: "nextoptions" },
-    ],
-  },
-  {
-    id: "audioplayer",
-    component: <AudioStep />,
-    trigger: "nextoptions",
-  },
-  {
-    id: "nextoptions",
-    options: [
       {
-        value: 1,
-        label: "For Next Question click here!",
-        trigger: "usernationality",
+        value: 2,
+        label: <CustomImage src={q_1_2} />,
+        component: <CustomImage src={q_1_2} selectedOption={2} />,
+        trigger: "userstate",
+      },
+      {
+        value: 3,
+        label: <CustomImage src={q_1_3} />,
+        component: <CustomImage src={q_1_3} selectedOption={3} />,
+        trigger: "userstate",
       },
     ],
   },
-  {
-    id: "usernationality",
-    message: "Enter Nationality",
-    trigger: "nationality",
-  },
-  {
-    id: "nationality",
-    user: true,
-    trigger: "useraddress",
-  },
-  {
-    id: "useraddress",
-    message: "Enter Your Address",
-    trigger: "address",
-  },
-  {
-    id: "address",
-    user: true,
-    trigger: "userstate",
-  },
+
   {
     id: "userstate",
     message: "Select Your State",
@@ -275,18 +258,9 @@ const steps = [
   {
     id: "taluk",
     user: true,
-    trigger: "userpincode",
-  },
-  {
-    id: "userpincode",
-    message: "Enter the PinCode",
-    trigger: "pincode",
-  },
-  {
-    id: "pincode",
-    user: true,
     trigger: "usercourses",
   },
+
   {
     id: "usercourses",
     message: "Please Select",

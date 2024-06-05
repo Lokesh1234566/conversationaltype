@@ -12,7 +12,11 @@ const Chatbox = () => {
   };
   return (
     <div>
-      <ChatBot headerTitle="Testing" steps={steps} handleEnd={handleEnd} />
+      <ChatBot
+        headerTitle="Welcome to Demo"
+        steps={steps}
+        handleEnd={handleEnd}
+      />
     </div>
   );
 };
