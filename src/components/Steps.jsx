@@ -12,7 +12,7 @@ const steps = [
   {
     id: "1",
     message:
-      "Hello! This is a sample conversational from with HTML UI Elements",
+      "Hello! This is a sample conversational form with HTML UI Elements",
     trigger: "name",
   },
   {
@@ -38,7 +38,7 @@ const steps = [
   },
   {
     id: "storeDateOfBirth",
-    message: "Date picker {previousValue} demo done",
+    message: "Date picker value {previousValue} demo done",
     trigger: "user-email",
     delay: 1000,
     metadata: {
@@ -48,7 +48,7 @@ const steps = [
   },
   {
     id: "user-email",
-    message: "Demo for Email with valiation",
+    message: "Email data entry with validation",
     trigger: "email",
   },
   {
@@ -79,7 +79,7 @@ const steps = [
   {
     id: "phone_number",
     message:
-      "you selected {previousValue} ,Enter your phone number (Number validation)",
+      "you selected {previousValue} Enter your phone number (Number validation)",
     trigger: "phoneNumber",
   },
   {
@@ -137,25 +137,11 @@ const steps = [
       {
         value: 1,
         label: "As Next Question is based on vedio, click here to watch vedio",
-        trigger: "video",
-      },
-    ],
-  },
-  {
-    id: "video",
-    message: "Answer the next question carefully after watching below vedio ",
-    trigger: "videoOption",
-  },
-  {
-    id: "videoOption",
-    options: [
-      {
-        value: 1,
-        label: "click here!",
         trigger: "videoplayer",
       },
     ],
   },
+
   {
     id: "videoplayer",
     component: <VedioStep />,
@@ -166,7 +152,8 @@ const steps = [
     options: [
       {
         value: 1,
-        label: "For Next Question click here!",
+        label:
+          "Answer the question carefully based on above vedio, click here!",
         trigger: "select_image",
       },
     ],
@@ -234,7 +221,7 @@ const steps = [
 
   {
     id: "end",
-    message: "Thank You Watched The DEMO",
+    message: "Thank You for Watching The DEMO",
     end: true,
   },
 ];

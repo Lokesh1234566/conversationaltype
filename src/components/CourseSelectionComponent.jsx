@@ -57,7 +57,12 @@ const CourseSelectionComponent = ({ triggerNextStep }) => {
       <br />
 
       {/* Add more checkboxes for other courses as needed */}
-      <button onClick={handleDone}>Done</button>
+      <button
+        onClick={handleDone}
+        className="w-12 h-8 rounded-md bg-emerald-400"
+      >
+        Done
+      </button>
     </div>
   );
 };
