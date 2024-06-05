@@ -90,25 +90,9 @@ const steps = [
         return "Please enter a valid 10-digit phone number.";
       }
     },
-    trigger: "create_password",
-  },
-  {
-    id: "create_password",
-    message: "Create your password:",
-    trigger: "password",
-  },
-  {
-    id: "password",
-    user: true,
-    validator: (value) => {
-      if (value.length >= 6) {
-        return true;
-      } else {
-        return "Password must be at least 6 characters long.";
-      }
-    },
     trigger: "upload_photo",
   },
+
   {
     id: "upload_photo",
     message: "upload the photo (size should be less then 2MB)",

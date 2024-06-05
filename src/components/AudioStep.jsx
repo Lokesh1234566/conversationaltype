@@ -1,13 +1,11 @@
 import React from "react";
+import { audiofile } from "./ImageExports";
 
 const AudioStep = () => {
   return (
     <div>
       <audio controls>
-        <source
-          src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
-          type="audio/mp4"
-        />
+        <source src={audiofile} type="audio/mp4" />
         Your browser does not support the audio element.
       </audio>
     </div>
