@@ -3,7 +3,7 @@ import Chatbox from "./components/Chatbox";
 
 const App = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center h-[100vh]">
       <Chatbox />
     </div>
   );

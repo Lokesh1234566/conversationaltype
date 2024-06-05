@@ -27,7 +27,7 @@ const steps = [
   },
   {
     id: "userdateofbirth",
-    message: "Select Your Date Of Birth using date picker ",
+    message: "Hi {previousValue}, Select Your Date Of Birth using date picker ",
     trigger: "dateofbirth",
   },
   {
@@ -38,7 +38,7 @@ const steps = [
   },
   {
     id: "storeDateOfBirth",
-    message: "Date picker demo done",
+    message: "Date picker {previousValue} demo done",
     trigger: "user-email",
     delay: 1000,
     metadata: {
@@ -65,7 +65,8 @@ const steps = [
   },
   {
     id: "userGender",
-    message: "Select Your Gender (Push button validation)",
+    message:
+      "your email is {previousValue}, please Select Your Gender (Push button demo)",
     trigger: "gender",
   },
   {
@@ -77,7 +78,8 @@ const steps = [
   },
   {
     id: "phone_number",
-    message: "Enter your phone number (Number validation)",
+    message:
+      "you select {previousValue} ,Enter your phone number (Number validation)",
     trigger: "phoneNumber",
   },
   {
@@ -110,7 +112,7 @@ const steps = [
   },
   {
     id: "audio",
-    message: "Do You Want to play audio",
+    message: "Now, lets play audio demo",
     trigger: "audioOption",
   },
   {
@@ -141,20 +143,20 @@ const steps = [
   },
   {
     id: "video",
-    message: "Do You Want to Watch video",
-    trigger: "videoOption",
+    message: "Answer the next question carefully after watching below vedio ",
+    trigger: "videoplayer",
   },
-  {
-    id: "videoOption",
-    options: [
-      {
-        value: 1,
-        label: "yes",
-        trigger: "videoplayer",
-      },
-      { value: 2, label: "no", trigger: "nextoption" },
-    ],
-  },
+  // {
+  //   id: "videoOption",
+  //   options: [
+  //     {
+  //       value: 1,
+  //       label: "yes",
+  //       trigger: "videoplayer",
+  //     },
+  //     { value: 2, label: "no", trigger: "nextoption" },
+  //   ],
+  // },
   {
     id: "videoplayer",
     component: <VedioStep />,
@@ -202,7 +204,7 @@ const steps = [
 
   {
     id: "userstate",
-    message: "Select Your State",
+    message: "Select Your State (Check button demo)",
     trigger: "state",
   },
   {
@@ -215,39 +217,12 @@ const steps = [
   {
     id: "displaySelectedState",
     message: ({ previousValue }) => `You selected: ${previousValue}`,
-    trigger: "userdistrict",
-  },
-  {
-    id: "userdistrict",
-    message: "Select Your District",
-    trigger: "district",
-  },
-  {
-    id: "district",
-    component: <CustomDistrictComponent />,
-    asMessage: false,
-    waitAction: true,
-    trigger: "displaySelecteddistrict",
-  },
-  {
-    id: "displaySelecteddistrict",
-    message: ({ previousValue }) => `You selected: ${previousValue}`,
-    trigger: "usertaluk",
-  },
-  {
-    id: "usertaluk",
-    message: "Enter Your Taluk",
-    trigger: "taluk",
-  },
-  {
-    id: "taluk",
-    user: true,
     trigger: "usercourses",
   },
 
   {
     id: "usercourses",
-    message: "Please Select",
+    message: "Radio button demo  Please Select",
     trigger: "courses",
   },
   {
@@ -260,7 +235,7 @@ const steps = [
 
   {
     id: "end",
-    message: "Thank You",
+    message: "Thank You Watched The DEMO",
     end: true,
   },
 ];

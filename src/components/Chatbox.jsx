@@ -11,7 +11,7 @@ const Chatbox = () => {
     });
   };
   return (
-    <div>
+    <div className="h-[100vh]">
       <ChatBot
         headerTitle="Welcome to Demo"
         steps={steps}
