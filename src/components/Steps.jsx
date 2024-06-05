@@ -48,7 +48,7 @@ const steps = [
   },
   {
     id: "user-email",
-    message: "Demo for Email valiation",
+    message: "Demo for Email with valiation",
     trigger: "email",
   },
   {
@@ -79,7 +79,7 @@ const steps = [
   {
     id: "phone_number",
     message:
-      "you select {previousValue} ,Enter your phone number (Number validation)",
+      "you selected {previousValue} ,Enter your phone number (Number validation)",
     trigger: "phoneNumber",
   },
   {
@@ -112,7 +112,7 @@ const steps = [
   },
   {
     id: "audio",
-    message: "Now, lets play audio demo",
+    message: "Now, lets do audio demo",
     trigger: "audioOption",
   },
   {
@@ -136,7 +136,7 @@ const steps = [
     options: [
       {
         value: 1,
-        label: "For Next Question click here!",
+        label: "As Next Question is based on vedio, click here to watch vedio",
         trigger: "video",
       },
     ],
@@ -144,19 +144,18 @@ const steps = [
   {
     id: "video",
     message: "Answer the next question carefully after watching below vedio ",
-    trigger: "videoplayer",
+    trigger: "videoOption",
   },
-  // {
-  //   id: "videoOption",
-  //   options: [
-  //     {
-  //       value: 1,
-  //       label: "yes",
-  //       trigger: "videoplayer",
-  //     },
-  //     { value: 2, label: "no", trigger: "nextoption" },
-  //   ],
-  // },
+  {
+    id: "videoOption",
+    options: [
+      {
+        value: 1,
+        label: "click here!",
+        trigger: "videoplayer",
+      },
+    ],
+  },
   {
     id: "videoplayer",
     component: <VedioStep />,
